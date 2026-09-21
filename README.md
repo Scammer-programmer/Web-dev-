@@ -16,7 +16,7 @@ npm install
 
 | Команда                | Что делает                                |
 | ---------------------- | ----------------------------------------- |
-| `npm run dev`          | локальный сервер на http://localhost:5173 |
+| `npm run dev`          | локальный сервер на http://localhost:6589 |
 | `npm run build`        | сборка проекта в папку dist               |
 | `npm run preview`      | просмотр собранной версии                 |
 | `npm run lint:js`      | проверка JavaScript через ESLint          |

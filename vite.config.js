@@ -4,6 +4,12 @@ import { defineConfig } from 'vite';
 // В проекте три отдельные страницы, поэтому указываем их все как точки входа.
 export default defineConfig({
   root: '.',
+  server: {
+    port: 6589,
+  },
+  preview: {
+    port: 6589,
+  },
   build: {
     rollupOptions: {
       input: {
