@@ -5,9 +5,11 @@ import { defineConfig } from 'vite';
 export default defineConfig({
   root: '.',
   server: {
+    host: '127.0.0.1',
     port: 6589,
   },
   preview: {
+    host: '127.0.0.1',
     port: 6589,
   },
   build: {
