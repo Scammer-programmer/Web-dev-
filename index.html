@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="/favicon.svg" />
+    <title>Каталог мероприятий | CampusFlow</title>
+  </head>
+
+  <body>
+    <header class="header">
+      <div class="container header__inner">
+        <a class="logo" href="/"><span class="logo__mark">CF</span> CampusFlow</a>
+
+        <nav class="nav" aria-label="Основная навигация">
+          <ul class="nav__list">
+            <li>
+              <a class="nav__link nav__link--current" href="/" aria-current="page">Каталог</a>
+            </li>
+            <li><a class="nav__link" href="/register.html">Мои события</a></li>
+            <li><a class="nav__link" href="/register.html">Профиль</a></li>
+          </ul>
+        </nav>
+
+        <label class="visually-hidden" for="header-search">Быстрый поиск</label>
+        <input class="header__search" id="header-search" type="search" placeholder="Поиск" />
+      </div>
+    </header>
+
+    <main class="page">
+      <div class="container">
+        <h1 class="page__title">Учебные мероприятия</h1>
+        <p class="page__subtitle">Найдите лекцию, мастер-класс или встречу по интересам.</p>
+
+        <form class="toolbar" role="search">
+          <label class="visually-hidden" for="search">Поиск по названию или теме</label>
+          <input
+            class="toolbar__search"
+            id="search"
+            type="search"
+            placeholder="Поиск по названию или теме..."
+          />
+
+          <label class="visually-hidden" for="sort">Сортировка</label>
+          <select class="toolbar__select" id="sort">
+            <option value="new">Сначала новые</option>
+            <option value="seats">Больше свободных мест</option>
+          </select>
+
+          <button class="button button--ghost" id="reset" type="button">Сбросить</button>
+        </form>
+
+        <div class="chips" id="chips">
+          <button class="chip" type="button" data-category="Все">Все</button>
+          <button class="chip" type="button" data-category="Frontend">Frontend</button>
+          <button class="chip" type="button" data-category="Backend">Backend</button>
+          <button class="chip" type="button" data-category="UX/UI">UX/UI</button>
+          <button class="chip" type="button" data-category="Карьера">Карьера</button>
+          <p class="results-count" id="results-count" role="status">24 события</p>
+        </div>
+
+        <div class="catalog">
+          <section aria-labelledby="results-title">
+            <h2 class="visually-hidden" id="results-title">Результаты поиска</h2>
+            <div class="events" id="events-list"></div>
+            <div id="pagination"></div>
+          </section>
+
+          <aside class="panel filters" id="filters" aria-labelledby="filters-title">
+            <h2 id="filters-title">Мои фильтры</h2>
+
+            <button
+              class="button button--ghost button--block filters__toggle"
+              id="filters-toggle"
+              type="button"
+              aria-expanded="false"
+            >
+              Показать фильтры
+            </button>
+
+            <div class="filters__body">
+              <form id="filters-form">
+                <fieldset class="filters__group">
+                  <legend class="filters__legend">Дата</legend>
+                  <label class="visually-hidden" for="date">Период</label>
+                  <select class="filters__select" id="date" name="date">
+                    <option value="week">На этой неделе</option>
+                    <option value="any">Любая дата</option>
+                  </select>
+                </fieldset>
+
+                <fieldset class="filters__group">
+                  <legend class="filters__legend">Формат</legend>
+                  <label class="filters__option">
+                    <input type="checkbox" name="format" value="offline" checked /> Очно
+                  </label>
+                  <label class="filters__option">
+                    <input type="checkbox" name="format" value="online" /> Онлайн
+                  </label>
+                </fieldset>
+
+                <button class="button button--block filters__apply" type="submit">Применить</button>
+              </form>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="container">Учебный проект CampusFlow. Практическая работа №1.</div>
+    </footer>
+
+    <script type="module" src="/src/pages/catalog.js"></script>
+  </body>
+</html>

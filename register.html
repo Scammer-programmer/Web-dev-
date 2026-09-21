@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="/favicon.svg" />
+    <title>Регистрация на мероприятие | CampusFlow</title>
+  </head>
+
+  <body>
+    <header class="header">
+      <div class="container header__inner">
+        <a class="logo" href="/"><span class="logo__mark">CF</span> CampusFlow</a>
+
+        <nav class="nav" aria-label="Основная навигация">
+          <ul class="nav__list">
+            <li><a class="nav__link" href="/">Каталог</a></li>
+            <li><a class="nav__link" href="/register.html">Мои события</a></li>
+            <li>
+              <a class="nav__link nav__link--current" href="/register.html" aria-current="page">
+                Профиль
+              </a>
+            </li>
+          </ul>
+        </nav>
+
+        <label class="visually-hidden" for="header-search">Быстрый поиск</label>
+        <input class="header__search" id="header-search" type="search" placeholder="Поиск" />
+      </div>
+    </header>
+
+    <main class="page">
+      <div class="container">
+        <h1 class="page__title">Регистрация на мероприятие</h1>
+        <p class="page__subtitle">Заполните данные. Поля со звёздочкой обязательны.</p>
+
+        <div class="register">
+          <section class="panel" aria-labelledby="contacts-title">
+            <h2 id="contacts-title">Контактные данные</h2>
+
+            <form id="register-form" novalidate>
+              <div class="field">
+                <label class="field__label" for="name">
+                  Имя и фамилия <span class="field__required">*</span>
+                </label>
+                <input
+                  class="field__control"
+                  id="name"
+                  type="text"
+                  required
+                  aria-describedby="name-error"
+                />
+                <span class="field__error" id="name-error" role="alert"></span>
+              </div>
+
+              <div class="field">
+                <label class="field__label" for="email">
+                  E-mail <span class="field__required">*</span>
+                </label>
+                <input
+                  class="field__control"
+                  id="email"
+                  type="email"
+                  required
+                  aria-describedby="email-error"
+                />
+                <span class="field__error" id="email-error" role="alert"></span>
+              </div>
+
+              <div class="field">
+                <label class="field__label" for="team">Группа / команда</label>
+                <input class="field__control" id="team" type="text" />
+              </div>
+
+              <div class="field">
+                <fieldset class="field__group">
+                  <legend class="field__legend">
+                    Формат участия <span class="field__required">*</span>
+                  </legend>
+                  <label class="field__option">
+                    <input type="radio" name="format" value="offline" /> Очно
+                  </label>
+                  <label class="field__option">
+                    <input type="radio" name="format" value="online" /> Онлайн
+                  </label>
+                </fieldset>
+                <span class="field__error" id="format-error" role="alert"></span>
+              </div>
+
+              <div class="field">
+                <label class="field__label" for="comment">Комментарий</label>
+                <textarea
+                  class="field__control"
+                  id="comment"
+                  rows="3"
+                  placeholder="Например, вопрос организатору..."
+                ></textarea>
+              </div>
+
+              <div class="field">
+                <div class="field--checkbox">
+                  <input id="agree" type="checkbox" required />
+                  <label for="agree">Я согласен с правилами участия</label>
+                </div>
+                <span class="field__error" id="agree-error" role="alert"></span>
+              </div>
+
+              <div class="form__actions">
+                <button class="button" id="submit" type="submit">Отправить заявку</button>
+                <a class="button button--ghost" href="/">Отмена</a>
+              </div>
+            </form>
+
+            <div class="alert" id="success" hidden tabindex="-1">
+              <p class="alert__title">✓ Заявка принята</p>
+              <p class="alert__text">Подтверждение отправлено на почту.</p>
+              <a href="/">Перейти в «Мои события»</a>
+            </div>
+          </section>
+
+          <aside class="panel" aria-labelledby="states-title">
+            <h2 id="states-title">Состояния формы</h2>
+
+            <div class="states__item">
+              <p><b>1. Ошибка обязательного поля</b></p>
+              <div class="field field--error">
+                <label class="field__label" for="demo-email">E-mail</label>
+                <input class="field__control" id="demo-email" type="text" value="student@" />
+                <span class="field__error">Введите корректный e-mail</span>
+              </div>
+            </div>
+
+            <div class="states__item">
+              <p><b>2. Отправка</b></p>
+              <button class="button button--block" type="button" disabled>Отправка...</button>
+            </div>
+
+            <div class="states__item">
+              <p><b>3. Успех</b></p>
+              <div class="alert">
+                <p class="alert__title">✓ Заявка принята</p>
+                <p class="alert__text">Подтверждение отправлено на почту.</p>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="container">Учебный проект CampusFlow. Практическая работа №1.</div>
+    </footer>
+
+    <script type="module" src="/src/pages/register.js"></script>
+  </body>
+</html>

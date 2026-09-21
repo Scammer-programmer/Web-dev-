@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="/favicon.svg" />
+    <title>Мероприятие | CampusFlow</title>
+  </head>
+
+  <body>
+    <header class="header">
+      <div class="container header__inner">
+        <a class="logo" href="/"><span class="logo__mark">CF</span> CampusFlow</a>
+
+        <nav class="nav" aria-label="Основная навигация">
+          <ul class="nav__list">
+            <li>
+              <a class="nav__link nav__link--current" href="/" aria-current="page">Каталог</a>
+            </li>
+            <li><a class="nav__link" href="/register.html">Мои события</a></li>
+            <li><a class="nav__link" href="/register.html">Профиль</a></li>
+          </ul>
+        </nav>
+
+        <label class="visually-hidden" for="header-search">Быстрый поиск</label>
+        <input class="header__search" id="header-search" type="search" placeholder="Поиск" />
+      </div>
+    </header>
+
+    <main class="page">
+      <div class="container">
+        <a class="back-link" href="/">← Назад к каталогу</a>
+
+        <div class="event">
+          <div>
+            <article class="panel">
+              <div class="event__head">
+                <div class="event__cover">&lt;/&gt;</div>
+
+                <div>
+                  <p class="badge" id="event-category">Frontend</p>
+                  <h1 class="event__title" id="event-title">Семантический HTML</h1>
+                  <p class="event__summary" id="event-summary">Краткое описание мероприятия.</p>
+                  <p class="event__facts">
+                    <time id="event-date">18 сен · 16:00</time> ·
+                    <span id="event-place">ауд. 304</span>
+                  </p>
+                </div>
+              </div>
+            </article>
+
+            <div class="tabs" id="tabs" role="tablist" aria-label="Разделы мероприятия">
+              <button
+                class="tabs__button"
+                id="tab-about"
+                type="button"
+                role="tab"
+                aria-selected="true"
+              >
+                Описание
+              </button>
+              <button
+                class="tabs__button"
+                id="tab-program"
+                type="button"
+                role="tab"
+                aria-selected="false"
+              >
+                Программа
+              </button>
+              <button
+                class="tabs__button"
+                id="tab-speakers"
+                type="button"
+                role="tab"
+                aria-selected="false"
+              >
+                Спикеры
+              </button>
+            </div>
+
+            <section class="panel tabpanel" role="tabpanel" aria-labelledby="tab-about">
+              <h2>О мероприятии</h2>
+              <p>
+                На занятии участники научатся выбирать семантические элементы страницы, определять
+                границы компонентов и проверять структуру документа до стилизации.
+              </p>
+              <ul>
+                <li>landmark-элементы: header, nav, main, aside, footer;</li>
+                <li>article и section: когда что использовать;</li>
+                <li>формы, label, состояния ошибок.</li>
+              </ul>
+            </section>
+
+            <section class="panel tabpanel" role="tabpanel" aria-labelledby="tab-program" hidden>
+              <h2>Программа</h2>
+              <ul>
+                <li>16:00 вступление и разбор задачи;</li>
+                <li>16:20 практика по разметке;</li>
+                <li>17:10 проверка работ и вопросы.</li>
+              </ul>
+            </section>
+
+            <section class="panel tabpanel" role="tabpanel" aria-labelledby="tab-speakers" hidden>
+              <h2>Спикеры</h2>
+              <ul>
+                <li>Анна Волкова, преподаватель кафедры веб-технологий;</li>
+                <li>Игорь Минин, фронтенд-разработчик.</li>
+              </ul>
+            </section>
+          </div>
+
+          <aside class="panel" aria-labelledby="signup-title">
+            <h2 id="signup-title">Запись на мероприятие</h2>
+            <p class="signup__seats" id="event-seats">Осталось 18 из 40 мест</p>
+
+            <button class="button button--block" id="sign-up" type="button">Записаться</button>
+            <button
+              class="button button--ghost button--block signup__favorite"
+              id="favorite"
+              type="button"
+              aria-pressed="false"
+            >
+              ♡ В избранное
+            </button>
+
+            <dl class="signup__organizer">
+              <dt>Организатор</dt>
+              <dd id="event-organizer">Кафедра веб-технологий</dd>
+            </dl>
+          </aside>
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="container">Учебный проект CampusFlow. Практическая работа №1.</div>
+    </footer>
+
+    <script type="module" src="/src/pages/event.js"></script>
+  </body>
+</html>

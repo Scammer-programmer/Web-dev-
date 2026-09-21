@@ -1,0 +1,235 @@
+/* Страница мероприятия */
+.back-link {
+  display: inline-block;
+  margin-bottom: 16px;
+  color: var(--primary);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.event,
+.register {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 24px;
+  align-items: start;
+}
+
+.event__head {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 24px;
+}
+
+.event__cover {
+  display: grid;
+  place-items: center;
+  height: 120px;
+  border-radius: var(--radius);
+  background: var(--primary-soft);
+  color: var(--primary);
+  font-weight: 700;
+}
+
+.event__title {
+  margin-top: 8px;
+  font-size: 26px;
+}
+
+.event__summary,
+.event__facts {
+  margin-top: 8px;
+  color: var(--muted);
+}
+
+.tabs {
+  display: flex;
+  gap: 24px;
+  margin-top: 24px;
+  padding: 0 24px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+
+.tabs__button {
+  padding: 16px 0;
+  border: none;
+  border-bottom: 3px solid transparent;
+  background: none;
+  color: var(--muted);
+  font: inherit;
+  cursor: pointer;
+}
+
+.tabs__button:hover {
+  color: var(--text);
+}
+
+.tabs__button[aria-selected='true'] {
+  border-bottom-color: var(--primary);
+  color: var(--primary);
+  font-weight: 700;
+}
+
+.tabpanel {
+  margin-top: 24px;
+}
+
+.tabpanel p,
+.tabpanel li {
+  margin-top: 8px;
+  color: var(--muted);
+}
+
+.signup__seats {
+  color: var(--success);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.signup__favorite {
+  margin-top: 8px;
+}
+
+.signup__organizer {
+  margin-top: 24px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+}
+
+.signup__organizer dt {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.signup__organizer dd {
+  font-weight: 700;
+}
+
+/* Форма регистрации */
+.field {
+  margin-top: 16px;
+}
+
+.field__label,
+.field__legend {
+  display: block;
+  margin-bottom: 4px;
+  padding: 0;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.field__required {
+  color: var(--danger);
+}
+
+.field__control {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  font: inherit;
+}
+
+.field__control:focus {
+  border-color: var(--primary);
+}
+
+.field__error {
+  display: block;
+  margin-top: 4px;
+  color: var(--danger);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.field--error .field__control {
+  border-color: var(--danger);
+}
+
+.field__group {
+  display: flex;
+  gap: 24px;
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+.field__option,
+.field--checkbox {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.form__actions {
+  display: flex;
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.alert {
+  padding: 16px;
+  border: 1px solid var(--success);
+  border-radius: var(--radius);
+  background: #e7f7ee;
+}
+
+.alert__title {
+  color: var(--success);
+  font-weight: 700;
+}
+
+.alert__text {
+  margin-top: 4px;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.states__item {
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+}
+
+/* Адаптив: карточки перестраиваются, боковые панели уходят вниз */
+@media (width <= 1024px) {
+  .events {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .event,
+  .register {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (width <= 768px) {
+  .catalog {
+    grid-template-columns: 1fr;
+  }
+
+  .events {
+    grid-template-columns: 1fr;
+  }
+
+  .header__search {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .filters__toggle {
+    display: flex;
+    margin-top: 16px;
+  }
+
+  .filters__body {
+    display: none;
+  }
+
+  .filters--open .filters__body {
+    display: block;
+  }
+}
